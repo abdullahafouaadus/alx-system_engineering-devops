@@ -1,0 +1,11 @@
+#!/bin/bash
+
+for file in *; do
+    if [ -f "$file" ]; then
+        # Check if the file does not already start with a shebang line
+        if ! head -n 1 "$file" | grep -q "^#!/bin/bash"; then
+            # Prepend the shebang line to the file
+            echo "#!/bin/bash" | cat - "$file" > temp && mv temp "$file"
+        fi
+    fi
+done
