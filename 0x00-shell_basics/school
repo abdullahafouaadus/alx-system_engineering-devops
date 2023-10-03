@@ -1,4 +1,2 @@
-#!/bin/bash
 0	string	SCHOOL	School data
 !:mime	School
-//this is not working for some reason
